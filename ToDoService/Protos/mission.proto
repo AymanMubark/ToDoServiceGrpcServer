@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "ToDoService.Protos";
+
+
+
+service MissionProtoService {
+	rpc GetMission (GetMissionModelRequest) returns (GetMissionModelResponse);
+	rpc CreateMission (CreateMissionRquest) returns (MissionModel);
+}
+
+
+message GetMissionModelRequest{
+}
+
+message GetMissionModelResponse{
+  repeated MissionModel mission = 1;
+}
+
+message CreateMissionRquest{
+	MissionModel mission = 1;
+}
+
+message MissionModel {
+	 int32 Id =1;
+     string Title =2;
+}
